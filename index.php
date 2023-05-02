@@ -16,6 +16,14 @@
         require __DIR__ . '/views/home.php';
     });
 
+    $router->map( 'GET', '/users', function() {
+        echo "<h1>Bienvenu sur la page des utilisateurs</h1>";
+    });
+
+    $router->map( 'GET', '/users/[i:id]', function($id) {
+        echo "<h1>Bienvenu sur la page des utilisateurs ".$id."</h1>";
+    });
+
 
     // match current request url
     $match = $router->match();

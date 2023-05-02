@@ -13,10 +13,10 @@ class ComposerStaticInit3e2349df30cdc442aee2037c245549b6
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Superweek\\Views\\' => 16,
-            'Superweek\\Src\\' => 14,
-            'Superweek\\Model\\' => 16,
-            'Superweek\\Controller\\' => 21,
+            'SuperWeek\\Views\\' => 16,
+            'SuperWeek\\Src\\' => 14,
+            'SuperWeek\\Model\\' => 16,
+            'SuperWeek\\Controller\\' => 21,
         ),
         'P' => 
         array (
@@ -29,21 +29,21 @@ class ComposerStaticInit3e2349df30cdc442aee2037c245549b6
     );
 
     public static $prefixDirsPsr4 = array (
-        'Superweek\\Views\\' => 
+        'SuperWeek\\Views\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/View',
+            0 => __DIR__ . '/../..' . '/src/View',
         ),
-        'Superweek\\Src\\' => 
+        'SuperWeek\\Src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'Superweek\\Model\\' => 
+        'SuperWeek\\Model\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Model',
+            0 => __DIR__ . '/../..' . '/src/Model',
         ),
-        'Superweek\\Controller\\' => 
+        'SuperWeek\\Controller\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Controller',
+            0 => __DIR__ . '/../..' . '/src/Controller',
         ),
         'Psr\\Container\\' => 
         array (

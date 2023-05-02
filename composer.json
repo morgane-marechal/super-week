@@ -2,12 +2,12 @@
     "name": "morgane/src",
     "autoload": {
         "psr-4": {
-            "Superweek\\Src\\": "src/",
-            "Superweek\\Model\\": "Model/",
+            "SuperWeek\\Src\\": "src/",
+            "SuperWeek\\Model\\": "src/Model/",
 
-            "Superweek\\Controller\\": "Controller/",
+            "SuperWeek\\Controller\\": "src/Controller/",
 
-            "Superweek\\Views\\": "View/"
+            "SuperWeek\\Views\\": "src/View/"
 
         }
     },

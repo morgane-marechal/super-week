@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'morgane/src',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'db555a0994abaa366c277cd6ae751246fe0bfdde',
+        'reference' => 'd621bf0218fc0df849c7e21a7f04e0f7043b830e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'db555a0994abaa366c277cd6ae751246fe0bfdde',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'altorouter/altorouter' => array(
             'pretty_version' => 'v1.1.0',
             'version' => '1.1.0.0',
@@ -34,6 +25,15 @@
             'reference' => '92efad6a967f0b79c499705c69b662f738cc9e4d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../fakerphp/faker',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'morgane/src' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'd621bf0218fc0df849c7e21a7f04e0f7043b830e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

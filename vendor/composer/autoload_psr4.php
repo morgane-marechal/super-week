@@ -6,6 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Superweek\\Views\\' => array($baseDir . '/View'),
+    'Superweek\\Src\\' => array($baseDir . '/src'),
+    'Superweek\\Model\\' => array($baseDir . '/Model'),
+    'Superweek\\Controller\\' => array($baseDir . '/Controller'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
 );

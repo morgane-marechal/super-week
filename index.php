@@ -8,12 +8,12 @@
 
 
     $router->map( 'GET', '/', function() {
-        require __DIR__ . '/views/home.php';
+        require __DIR__ . '/src/View/home.php';
     });
 
 
     $router->map( 'GET', '/home', function() {
-        require __DIR__ . '/views/home.php';
+        require __DIR__ . '/src/View/home.php';
     });
 
     $router->map( 'GET', '/users', function() {

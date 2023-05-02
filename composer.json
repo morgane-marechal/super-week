@@ -1,6 +1,28 @@
 {
+    "name": "morgane/src",
+    "autoload": {
+        "psr-4": {
+            "Superweek\\Src\\": "src/",
+            "Superweek\\Model\\": "Model/",
+
+            "Superweek\\Controller\\": "Controller/",
+
+            "Superweek\\Views\\": "View/"
+
+        }
+    },
+    "authors": [
+        {
+            "name": "morgane-marechal",
+            "email": "morgane.marechal@laplateforme.io"
+        }
+    ],
+   
+
+
     "require": {
         "altorouter/altorouter": "1.1.0",
         "fakerphp/faker": "^1.21"
     }
+
 }

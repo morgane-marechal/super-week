@@ -14,7 +14,6 @@ class UserController
     public function __construct()
     {
         $this->user = new User();
-
     }
 
     public function showPage()

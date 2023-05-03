@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
@@ -10,7 +13,9 @@
     $router->setBasePath('/super-week');
     use SuperWeek\Controller\UserController;
     use SuperWeek\Controller\AuthController;
-    use SuperWeek\Model\User;    
+    use SuperWeek\Controller\BookController;
+    use SuperWeek\Model\User;
+    use SuperWeek\Model\Book;    
 
     $router->map( 'GET', '/', function() {
         require __DIR__ . '/src/View/home.php';
@@ -85,8 +90,19 @@
         $success = $authController->login($email, $password);
     });
 
+    //-----------------route for register book and books-----------------------------
 
 
+    $router->map( 'GET', '/books/write', function() {
+        require __DIR__ . '/src/View/bookform.php';
+    });
+
+    $router->map( 'POST', '/books/write', function() {
+        $title=htmlspecialchars($_POST["title"]);
+        $content=htmlspecialchars($_POST["content"]);
+        $bookController = new BookController();
+        $success = $bookController->registerBook($title, $content);
+    });
 
 
 

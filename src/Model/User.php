@@ -69,7 +69,6 @@ class User extends Database
             }
         }else{
             return json_encode(['response' => 'not ok', 'echoue' => 'Vous êtes déjà inscrit']);
-
         }
     }
 

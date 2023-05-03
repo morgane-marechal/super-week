@@ -130,4 +130,8 @@ class User extends Database
         return $results;
     }
 
+    public function logout(){
+        session_destroy();
+    }
+
 }

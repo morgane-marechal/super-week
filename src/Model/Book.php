@@ -32,5 +32,25 @@ class Book extends Database
                 return json_encode(['response' => 'not ok', 'echoue' => 'Echec']);
             }
     }
+
+
+    public function allBooks(){
+        $allBooks = $this->pdo->prepare("SELECT * FROM book");
+        $allBooks->execute([
+        ]);
+        $result = $allBooks->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function theBook($id){
+        $theBook = $this->pdo->prepare("SELECT * FROM book where id = $id");
+        $theBook->execute([
+        ]);
+        $result = $theBook->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+
+
 }
 ?>

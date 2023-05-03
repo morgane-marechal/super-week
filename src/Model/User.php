@@ -106,6 +106,10 @@ class User extends Database
             if (password_verify($password, $hashed_password)) {
                 $userId = $results['id'];
                 $_SESSION['id'] = $userId;
+                $lastname = $results['last_name'];
+                $_SESSION['last_name'] = $lastname;
+                $firstname = $results['first_name'];
+                $_SESSION['first_name'] = $firstname;
                 return true;
             } else {
                 return false;
@@ -113,6 +117,18 @@ class User extends Database
         } else {
             return false;
         }
+    }
+
+    public function getUserInfo($id){
+        $sql = "SELECT * 
+        FROM user
+        WHERE id = :id ";
+        $sql_exe = $this->pdo->prepare($sql);
+        $sql_exe->execute([
+            'id' => $id,
+        ]);
+        $results = $sql_exe->fetch(PDO::FETCH_ASSOC);
+        return $results;
     }
 
 }

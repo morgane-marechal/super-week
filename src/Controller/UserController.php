@@ -45,6 +45,11 @@ class UserController
         $faker = Factory::create();
             echo $faker->name();
     }
+
+    public function getUserInfo($id){
+        $success = $this->user->getUserInfo($id);
+        return json_encode($success);
+    }
 }
 
 ?>

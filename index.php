@@ -10,7 +10,6 @@
     $router->setBasePath('/super-week');
     use SuperWeek\Controller\UserController;
     use SuperWeek\Controller\AuthController;
-
     use SuperWeek\Model\User;    
 
     $router->map( 'GET', '/', function() {
@@ -47,6 +46,9 @@
 
     $router->map( 'GET', '/users/[i:id]', function($id) {
         echo "<h1>Bienvenu sur la page des utilisateurs ".$id."</h1>";
+        $userController = new UserController();
+        $success = $userController->getUserInfo($id);
+        var_dump($success);
     });
 
 
@@ -81,8 +83,6 @@
         $password=htmlspecialchars($_POST["password"]);
         $authController = new AuthController();
         $success = $authController->login($email, $password);
-        
-
     });
 
 

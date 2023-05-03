@@ -6,7 +6,7 @@ use Faker\Factory;
 
 
 
-class UserController
+class AuthController
 {
 
     public object $user;
@@ -21,6 +21,16 @@ class UserController
     {
 
         require __DIR__ . '/../views/home.php';
+    }
+
+    public function register($email, $first_name, $last_name, $password, $checkPassword){
+        require __DIR__ . '/../View/register.php';
+
+        if($password === $checkPassword){
+            $success = $this->user->register($email, $first_name, $last_name, $password);
+            return $success;
+
+        }
     }
 
 

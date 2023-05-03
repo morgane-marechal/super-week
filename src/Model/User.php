@@ -30,12 +30,64 @@ class User extends Database
     public function createUser($email, $first_name, $last_name, $password){
         $request = "INSERT INTO user (email, first_name, last_name, password)
         VALUES (:email, :first_name, :last_name, :password)";
+        if (!$this->verifUser($email)){
             $statement = $this->pdo->prepare($request);
             $statement ->execute([
                 'email' => $email,
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'password' => password_hash($password, PASSWORD_DEFAULT)
-            ]);          
+            ]);
+            
+            if ($statement) {
+                return json_encode(['response' => 'ok', 'reussite' => 'Ajout utilisateurs']);
+            } else {
+                return json_encode(['response' => 'not ok', 'echoue' => 'Echec']);
+            }
+        }else{
+            return json_encode(['response' => 'not ok', 'echoue' => 'Cet utilisateur existe déjà']);
+
+        }
     }
+
+    public function register($email, $first_name, $last_name, $password){
+        $request = "INSERT INTO user (email, first_name, last_name, password)
+        VALUES (:email, :first_name, :last_name, :password)";
+        if (!$this->verifUser($email)){
+            $statement = $this->pdo->prepare($request);
+            $statement ->execute([
+                'email' => $email,
+                'first_name' => $first_name,
+                'last_name' => $last_name,
+                'password' => password_hash($password, PASSWORD_DEFAULT)
+            ]);
+            
+            if ($statement) {
+                return json_encode(['response' => 'ok', 'reussite' => 'Vous êtes inscrit']);
+            } else {
+                return json_encode(['response' => 'not ok', 'echoue' => 'Echec inscription']);
+            }
+        }else{
+            return json_encode(['response' => 'not ok', 'echoue' => 'Vous êtes déjà inscrit']);
+
+        }
+    }
+
+    public function verifUser($email)
+    {
+            $sql = "SELECT * 
+                    FROM user
+                    WHERE email = :email";
+            $sql_exe = $this->pdo->prepare($sql);
+            $sql_exe->execute([
+                'email' => $email,
+            ]);
+            $results = $sql_exe->fetch(PDO::FETCH_ASSOC);
+            if ($results) {
+                return true;
+            } else {
+                return false;
+            }
+    }
+
 }

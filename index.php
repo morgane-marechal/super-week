@@ -9,6 +9,8 @@
     
     $router->setBasePath('/super-week');
     use SuperWeek\Controller\UserController;
+    use SuperWeek\Controller\AuthController;
+
     use SuperWeek\Model\User;    
 
     $router->map( 'GET', '/', function() {
@@ -29,10 +31,11 @@
 
 
     $router->map( 'GET', '/users/fill', function() {
-        echo "<h1>Page fill</h1>"; 
+        echo "<h1>Page fill for add data in DB => users</h1>"; 
         for ($i = 0; $i < 6; $i++) {
             $userController = new UserController();
             $success = $userController->createUsers();
+            echo $success;
         }
     });
 
@@ -51,6 +54,20 @@
 
     $router->map( 'GET', '/register', function() {
         require __DIR__ . '/src/View/register.php';
+    });
+
+
+    $router->map( 'POST', '/register', function() {
+        $email=htmlspecialchars($_POST["email"]);
+        $first_name=htmlspecialchars($_POST["first_name"]);
+        $last_name=htmlspecialchars($_POST["last_name"]);
+        $password=htmlspecialchars($_POST["password"]);
+        $checkPassword=htmlspecialchars($_POST["checkPassword"]);
+
+        $authController = new AuthController();
+        $success = $authController->register($email, $first_name, $last_name, $password, $checkPassword);
+        echo $success;
+
     });
 
 

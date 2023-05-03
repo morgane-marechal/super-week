@@ -15,16 +15,26 @@
 
                 <div class='input-wrapper'>
                     <label for='first_name'>Prénom</label>
-                    <input id='first_name' class='register' name='first_name' type='text' value='' minlength="1" required>
+                    <input id='first_name' class='register' name='first_name' type='text' value='' minlength="2" required>
                 </div>
                 <div class='input-wrapper'>
                     <label for='last_name'>Nom</label>
-                    <input id='last_name' class='register' name='last_name' type='text' value='' minlengh="1" required>
+                    <input id='last_name' class='register' name='last_name' type='text' value='' minlengh="2" required>
                 </div>
 
                 <div class='input-wrapper'>
                     <label for='email'>Email</label>
                     <input id='email' class='register' name='email' type='email' value=''  pattern="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$" required>
+                </div>
+
+                <div class='input-wrapper'>
+                    <label for='password'>Mot de passe</label>
+                    <input id='password' class='register' name='password' type='password' value='' minlengh="2" required>
+                </div>
+
+                <div class='input-wrapper'>
+                    <label for='checkPassword'>Vérifier le mot de passe</label>
+                    <input id='checkPassword' class='register' name='checkPassword' type='password' value='' minlengh="2" required>
                 </div>
                 <button type="submit" class="register">Enregistrer</button>
         </form>

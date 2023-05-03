@@ -10,8 +10,7 @@ use Faker\Factory;
 
 class BookController
 {
-
-    public object $user;
+    public object $book;
 
     public function __construct()
     {
@@ -26,7 +25,7 @@ class BookController
 
     public function allBooks(){
         $success = $this->book->allBooks();
-        return json_encode($success);
+        return $success;
     }
 
     public function theBook($id){

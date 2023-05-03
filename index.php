@@ -15,7 +15,11 @@ session_start();
     use SuperWeek\Controller\AuthController;
     use SuperWeek\Controller\BookController;
     use SuperWeek\Model\User;
-    use SuperWeek\Model\Book;    
+    use SuperWeek\Model\Book;   
+    
+    
+    // --------------------home-page-----------------------------
+
 
     $router->map( 'GET', '/', function() {
         require __DIR__ . '/src/View/home.php';
@@ -27,10 +31,9 @@ session_start();
     });
 
     $router->map( 'GET', '/users', function() {
-        echo "<h1>Bienvenu sur la page des utilisateurs</h1>";
         $userController = new UserController();
         $success = $userController->displayUsers();
-        var_dump($success);
+        echo $success;
     });
 
 
@@ -50,10 +53,9 @@ session_start();
     });
 
     $router->map( 'GET', '/users/[i:id]', function($id) {
-        echo "<h1>Bienvenu sur la page des utilisateurs ".$id."</h1>";
         $userController = new UserController();
         $success = $userController->getUserInfo($id);
-        var_dump($success);
+        echo $success;
     });
 
 
@@ -105,13 +107,13 @@ session_start();
     $router->map( 'GET', '/books', function() {
         $bookController = new BookController();
         $success = $bookController->allBooks();
-        var_dump($success);
+        echo $success;
     });
 
     $router->map( 'GET', '/books/[i:id]', function($id) {
         $bookController = new BookController();
         $success = $bookController->theBook($id);
-        var_dump($success);
+        echo $success;
     });
 
     $router->map( 'POST', '/books/write', function() {

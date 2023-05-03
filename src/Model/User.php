@@ -24,7 +24,7 @@ class User extends Database
         $displayUsers->execute([
         ]);
         $result = $displayUsers->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        return json_encode([$result]);
     }
 
     public function createUser($email, $first_name, $last_name, $password){

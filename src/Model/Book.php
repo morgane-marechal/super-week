@@ -4,6 +4,7 @@ namespace SuperWeek\Model;
 
 use SuperWeek\Model\Database;
 use pdo;
+
 class Book extends Database
 {
     public ?int $id = null;
@@ -39,7 +40,7 @@ class Book extends Database
         $allBooks->execute([
         ]);
         $result = $allBooks->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        return json_encode([$result]);
     }
 
     public function theBook($id){

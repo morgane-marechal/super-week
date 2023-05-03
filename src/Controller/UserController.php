@@ -25,7 +25,7 @@ class UserController
     public function displayUsers()
     {
         $success = $this->user->displayUsers();
-        return json_encode($success);
+        return $success;
     }
 
     public function createUsers()

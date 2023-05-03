@@ -25,12 +25,16 @@ class AuthController
 
     public function register($email, $first_name, $last_name, $password, $checkPassword){
         require __DIR__ . '/../View/register.php';
-
         if($password === $checkPassword){
             $success = $this->user->register($email, $first_name, $last_name, $password);
             return $success;
-
         }
+    }
+
+    public function login($email, $password){
+        require __DIR__ . '/../View/login.php';
+        $success = $this->user->login($email, $password);
+        return $success;
     }
 
 

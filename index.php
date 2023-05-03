@@ -70,6 +70,21 @@
 
     });
 
+    //-----------------route for login-----------------------------
+
+    $router->map( 'GET', '/login', function() {
+        require __DIR__ . '/src/View/login.php';
+    });
+
+    $router->map( 'POST', '/login', function() {
+        $email=htmlspecialchars($_POST["email"]);
+        $password=htmlspecialchars($_POST["password"]);
+        $authController = new AuthController();
+        $success = $authController->login($email, $password);
+        
+
+    });
+
 
 
 

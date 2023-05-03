@@ -83,6 +83,11 @@ session_start();
         require __DIR__ . '/src/View/login.php';
     });
 
+    $router->map( 'GET', '/logout', function() {
+        $authController = new AuthController();
+        $success = $authController->logout();
+    });
+
     $router->map( 'POST', '/login', function() {
         $email=htmlspecialchars($_POST["email"]);
         $password=htmlspecialchars($_POST["password"]);
@@ -95,6 +100,18 @@ session_start();
 
     $router->map( 'GET', '/books/write', function() {
         require __DIR__ . '/src/View/bookform.php';
+    });
+
+    $router->map( 'GET', '/books', function() {
+        $bookController = new BookController();
+        $success = $bookController->allBooks();
+        var_dump($success);
+    });
+
+    $router->map( 'GET', '/books/[i:id]', function($id) {
+        $bookController = new BookController();
+        $success = $bookController->theBook($id);
+        var_dump($success);
     });
 
     $router->map( 'POST', '/books/write', function() {

@@ -24,6 +24,16 @@ class BookController
         return $success;
     }
 
+    public function allBooks(){
+        $success = $this->book->allBooks();
+        return json_encode($success);
+    }
+
+    public function theBook($id){
+        $success = $this->book->theBook($id);
+        return json_encode($success);
+    }
+
 
 }
 

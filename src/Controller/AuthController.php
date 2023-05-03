@@ -37,6 +37,10 @@ class AuthController
         return $success;
     }
 
+    public function logout(){
+        $success = $this->user->logout();
+        return $success;
+    }
 
 }
 

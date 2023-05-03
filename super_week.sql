@@ -6,23 +6,24 @@ CREATE TABLE user
     id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     email varchar(255),
     first_name varchar(255),
-    last_name varchar(255)
+    last_name varchar(255),
+    password varchar(255)
 );
 
 
-INSERT INTO user (email, first_name, last_name)
- VALUES
- ('hilaire.savary@gmail.com', 'Hilaire', 'Jean'),
- ('lala12@gmail.com', 'Laliana', 'Updat'),
- ('halfGod@gmail.com', 'Linus', 'Torvalds'),
- ('OuinOuinGuy@gmail.com', 'Elon', 'Musk'),
- ('10applepie@gmail.com', 'Steve', 'Jobs'),
- ('thecomput.stephanie@gmail.com', 'Stephanie', 'Ukachi'),
- ('boubou2@yahoo.com', 'Baboutakka', 'Rififi'),
- ('coule2source@gmail.com', 'Jacque', 'Titanic'),
- ('jeux.brule@gmail.com', 'Icare', 'Fire'),
- ('yoko.camion@gmail.com', 'Yoko', 'Kamio'),
- ('mish.ladeprime@gmail.com', 'Yukio', 'Mishima');
+-- INSERT INTO user (email, first_name, last_name)
+--  VALUES
+--  ('hilaire.savary@gmail.com', 'Hilaire', 'Jean'),
+--  ('lala12@gmail.com', 'Laliana', 'Updat'),
+--  ('halfGod@gmail.com', 'Linus', 'Torvalds'),
+--  ('OuinOuinGuy@gmail.com', 'Elon', 'Musk'),
+--  ('10applepie@gmail.com', 'Steve', 'Jobs'),
+--  ('thecomput.stephanie@gmail.com', 'Stephanie', 'Ukachi'),
+--  ('boubou2@yahoo.com', 'Baboutakka', 'Rififi'),
+--  ('coule2source@gmail.com', 'Jacque', 'Titanic'),
+--  ('jeux.brule@gmail.com', 'Icare', 'Fire'),
+--  ('yoko.camion@gmail.com', 'Yoko', 'Kamio'),
+--  ('mish.ladeprime@gmail.com', 'Yukio', 'Mishima');
 
  /*------------------book table----------------*/
 CREATE TABLE book 

@@ -30,7 +30,7 @@
 
     $router->map( 'GET', '/users/fill', function() {
         echo "<h1>Page fill</h1>"; 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 6; $i++) {
             $userController = new UserController();
             $success = $userController->createUsers();
         }
@@ -45,6 +45,21 @@
     $router->map( 'GET', '/users/[i:id]', function($id) {
         echo "<h1>Bienvenu sur la page des utilisateurs ".$id."</h1>";
     });
+
+
+    //-----------------route for register-----------------------------
+
+    $router->map( 'GET', '/register', function() {
+        require __DIR__ . '/src/View/register.php';
+    });
+
+
+
+
+
+
+    //-------------------------------------------------------------------
+    
 
 
     // match current request url

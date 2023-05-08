@@ -30,8 +30,8 @@ class UserController
 
     public function createUsers()
     {        
-        $faker = Factory::create();
-        $first_name = $faker->firstName();
+        $faker = Factory::create('is_IS');
+        $first_name = $faker->firstNameFemale();
         $last_name = $faker->lastName();
         $emailEnd = $faker->freeEmailDomain();
         $email = strtolower($first_name).".".strtolower($last_name)."@".$emailEnd;

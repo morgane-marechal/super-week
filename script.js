@@ -1,4 +1,3 @@
-console.log("test lien javascript 1");
 
 let displaySpace = document.getElementById('display');
 
@@ -10,14 +9,11 @@ let allUsers = document.getElementById('allUsers');
 
 allUsers.addEventListener("click", (e) =>{
     getUsers();
-    console.log("click");
 })
 
 async function getUsers(){
     let response = await fetch(`users`, {method: 'GET'});
     let responseData = await response.json();
-   // exemple console.log(responseData[0][0].email);
-    console.log(responseData);
     length = responseData[0].length;
     displaySpace.innerHTML='';
 
@@ -39,13 +35,11 @@ let oneUser = document.getElementById('oneUser');
 async function getOneUser(userid){
     let response = await fetch(`users/${userid}`, {method: 'GET'});
     let responseData = await response.json();
-    console.log(responseData);
-    //console.log(responseData.email);
     displaySpace.innerHTML='';
 
     let template = `
         <div class="user">
-            <h2><span>${responseData.last_name} </span><span> ${responseData.first_name}</span></h2>
+            <p><span>${responseData.last_name} </span><span> ${responseData.first_name}</span></p>
             <span>${responseData.email}</span>
         </div>`;
     displaySpace.insertAdjacentHTML('beforeend', template);   
@@ -55,8 +49,6 @@ async function getOneUser(userid){
 oneUser.addEventListener("submit", (e) =>{
     e.preventDefault();   
     let userid = e.target[0].value;
-    console.log("click");
-    console.log(userid);
     getOneUser(userid);
 })
 
@@ -78,7 +70,7 @@ allBooks.addEventListener("click", (e) =>{
 async function getBooks(){
     let response = await fetch(`books`, {method: 'GET'});
     let responseData = await response.json();
-    console.log(responseData);
+    // console.log(responseData);
     lengthBook = responseData[0].length;
     
     displaySpace.innerHTML='';
@@ -101,7 +93,7 @@ let oneBook = document.getElementById('oneBook');
 async function getOneBook(bookid){
     let response = await fetch(`books/${bookid}`, {method: 'GET'});
     let responseData = await response.json();
-    console.log(responseData);
+    // console.log(responseData);
     displaySpace.innerHTML='';
     
     let template = `
@@ -118,7 +110,7 @@ async function getOneBook(bookid){
 oneBook.addEventListener("submit", (e) =>{
     e.preventDefault();   
     let bookid = e.target[0].value;
-    console.log("click");
-    console.log(bookid);
+    // console.log("click");
+    // console.log(bookid);
     getOneBook(bookid);
 })
